@@ -31,25 +31,32 @@ Results on **FashionMNIST Dataset** for Resnet18 and Resnet50
   <img src="results_images/fmnist+resnet50.png" width="400"/>
 </p>
 
-Results after varying hyperparameters for Resnet18 and Resnet50 on MNIST and FashionMNIST datasets.
+
+### Results after varying hyperparameters for Resnet18 and Resnet50 on MNIST and FashionMNIST datasets.
 
 1.) Pin Memory (True/False)
 
 The table shows Pin Memory, Accuracy, Time Taken.
-![Pin Memory](results_images/pmemory.png)
+<p align="center">
+<img src= "results_images/pmemory.png" width="400"/>
+</p>
 
 2.) Epochs  
-![Epochs](results_images/epochs.png)    
-
+<p align="center">
+<img src= "results_images/epochs.png" width="400"/>
+</p>    
 
 
 ### Question 1 part b.)
 
-![Using SVM)](results_images/svm.png)
-
+<p align="center">
+    <img src= "results_images/svm.png" width="400"/>
+</p>
 
 ### Question 2.) The table below shows the comparison between cpu and gpu for accuracy/ time and FLOPs
-![Q2](results_images/gpu_vs_cpu.png)
+<p align="center">
+<img src= "results_images/gpu_vs_cpu.png" width="400"/>
+</p>
 
 
 
