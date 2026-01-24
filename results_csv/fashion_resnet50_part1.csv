@@ -1,0 +1,3 @@
+Dataset,Batch Size,Optimizer,LR,Model,Test Accuracy (%)
+FashionMNIST,16,Adam,0.001,ResNet50,92.99166666666666
+FashionMNIST,32,Adam,0.001,ResNet50,92.98333333333333
