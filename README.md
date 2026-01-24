@@ -55,7 +55,7 @@ The table shows Pin Memory, Accuracy, Time Taken.
 
 ### Question 2.) The table below shows the comparison between cpu and gpu for accuracy/ time and FLOPs
 <p align="center">
-<img src= "results_images/gpu_vs_cpu.png" width="400"/>
+<img src= "results_images/gpu_vs_cpu.png"/>
 </p>
 
 
