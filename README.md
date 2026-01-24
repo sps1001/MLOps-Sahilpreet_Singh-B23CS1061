@@ -1,2 +1,3 @@
 # MLOps-Sahilpreet_Singh-B23CS1061
- Readme for Assignment-1
+
+![Epoch Comparison](results_images/epoches.png)
