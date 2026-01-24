@@ -62,7 +62,9 @@ SVM with hyperparameter tuning with kernels such as: ‘poly’, ‘rbf’
 ## Best Model Selection
 
 Based on validation and test performance, the best-performing models were:
+
 1.) MNIST: ResNet18 with Adam optimizer (LR=0.0001, Batch Size=16)
+
 2.) FashionMNIST: ResNet50 with Adam optimizer (LR=0.001, Batch Size=16)
 
 ## Analysis
