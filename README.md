@@ -41,14 +41,14 @@ The table shows Pin Memory, Accuracy, Time Taken.
 <img src= "results_images/pmemory.png" width="400"/>
 </p>
 
-2.) Epochs  
+2.) Epochs Variation (10 vs 20)
 <p align="center">
 <img src= "results_images/epochs.png" width="400"/>
-</p>    
+</p> 
 
 
 ### Question 1 part b.)
-
+SVM with hyperparameter tuning with kernels such as: ‘poly’, ‘rbf’
 <p align="center">
     <img src= "results_images/svm.png" width="400"/>
 </p>
