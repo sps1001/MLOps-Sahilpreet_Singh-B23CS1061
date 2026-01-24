@@ -17,13 +17,14 @@ https://colab.research.google.com/drive/102lihgBAIuxX8q2DdsztyvbfVg_2fyIv
 
 
 
-Observations for Question 1.
+### Question 1.
 
 Results on **MNIST Dataset** for Resnet18 and Resnet50  
 <p align="center">
   <img src="results_images/mnist+resnet18.png" width="400"/>
   <img src="results_images/mnist+resnet50.png" width="400"/>
 </p>
+
 Results on **FashionMNIST Dataset** for Resnet18 and Resnet50  
 <p align="center">
   <img src="results_images/fmnist+resnet18.png" width="400"/>
@@ -42,12 +43,12 @@ The table shows Pin Memory, Accuracy, Time Taken.
 
 
 
-Question 1 part b.)
+### Question 1 part b.)
 
 ![Using SVM)](results_images/svm.png)
 
 
-Question2.) The table below shows the comparison between cpu and gpu for accuracy/ time and FLOPs
+### Question 2.) The table below shows the comparison between cpu and gpu for accuracy/ time and FLOPs
 ![Q2](results_images/gpu_vs_cpu.png)
 
 
