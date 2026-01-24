@@ -84,9 +84,3 @@ Based on validation and test performance, the best-performing models were:
 - results_csv/ – Raw experimental results
 - README.md – Summary of experiments and analysis
 
-
-## Best Model Selection
-
-Based on validation and test performance, the best-performing models were:
-1.) MNIST: ResNet18 with Adam optimizer (LR=0.0001, Batch Size=16)
-2.) FashionMNIST: ResNet50 with Adam optimizer (LR=0.001, Batch Size=16)
