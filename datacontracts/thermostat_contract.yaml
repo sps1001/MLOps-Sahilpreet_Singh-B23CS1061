@@ -1,0 +1,78 @@
+---
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CONTRACT: Smart Thermostat Fleet
+# ═══════════════════════════════════════════════════════════════════════════
+
+dataContractSpecification: 0.9.3
+id: urn:datacontract:iot:thermostats
+version: 1.0.0
+
+# ───────────────────────────────────────────────────────────────────────────
+# 1. OWNERSHIP & GOVERNANCE
+# ───────────────────────────────────────────────────────────────────────────
+info:
+  title: "Thermostat Telemetry"
+  description: |
+    Temperature and battery status from smart thermostats.
+    Guards against sensor failure defaults (e.g., 9999°C).
+  owner: "IoT Analytics Team"
+  contact:
+    name: "Sahil Kamboj (B23CS1061)"
+    email: "b23cs1061@iitj.ac.in"
+  classification: internal
+  tags: [iot, hardware, telemetry]
+
+# ───────────────────────────────────────────────────────────────────────────
+# 2. SCHEMA DEFINITION (Logical Contract)
+# ───────────────────────────────────────────────────────────────────────────
+schema:
+  type: object
+  properties:
+    device_id:
+      type: string
+      description: "Unique hardware identifier"
+      physical_mapping: dev_id
+
+    temperature_c:
+      type: number
+      description: "Ambient temperature in Celsius"
+      minimum: -30.0
+      maximum: 60.0
+      physical_mapping: temp_c
+
+    battery_level:
+      type: number
+      description: "Remaining battery percentage (0.0 to 1.0)"
+      minimum: 0.0
+      maximum: 1.0
+      physical_mapping: batt_lvl
+
+  required: [device_id, temperature_c, battery_level]
+
+# ───────────────────────────────────────────────────────────────────────────
+# 3. SERVICE LEVEL AGREEMENTS (SLAs)
+# ───────────────────────────────────────────────────────────────────────────
+sla:
+  freshness:
+    threshold: "5 minutes"
+    description: "Telemetery data availability threshold"
+
+# ───────────────────────────────────────────────────────────────────────────
+# 4. DATA QUALITY RULES
+# ───────────────────────────────────────────────────────────────────────────
+quality:
+  - name: temperature_range_check
+    type: validity
+    expression: "temperature_c >= -30 AND temperature_c <= 60"
+    threshold: "100%"
+    enforcement: hard
+    description: |
+      Rejects readings outside -30C to 60C to exclude failure
+      defaults (9999)
+
+  - name: battery_level_range
+    type: validity
+    expression: "battery_level >= 0.0 AND battery_level <= 1.0"
+    threshold: "100%"
+    enforcement: hard
+    description: "Battery level must be within valid range [0.0, 1.0]"

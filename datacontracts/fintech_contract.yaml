@@ -1,0 +1,84 @@
+---
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CONTRACT: FinTech Transaction Log
+# ═══════════════════════════════════════════════════════════════════════════
+
+dataContractSpecification: 0.9.3
+id: urn:datacontract:fintech:transactions
+version: 1.0.0
+
+# ───────────────────────────────────────────────────────────────────────────
+# 1. OWNERSHIP & GOVERNANCE
+# ───────────────────────────────────────────────────────────────────────────
+info:
+  title: "Bank Transaction Log"
+  description: |
+    Real-time transaction log for fraud detection.
+    Enforces strict account ID formats to prevent silent
+    model failures.
+  owner: "Fraud Detection Team"
+  contact:
+    name: "Sahil Kamboj (B23CS1061)"
+    email: "b23cs1061@iitj.ac.in"
+  classification: restricted
+  tags: [fintech, fraud, transactions]
+
+# ───────────────────────────────────────────────────────────────────────────
+# 2. SCHEMA DEFINITION (Logical Contract)
+# ───────────────────────────────────────────────────────────────────────────
+schema:
+  type: object
+  properties:
+    account_source_id:
+      type: string
+      description: |
+        Unique identifier for the source account (10-char
+        Alphanumeric)
+      physical_mapping: acct_src
+
+    account_destination_id:
+      type: string
+      description: |
+        Unique identifier for the destination account (10-char
+        Alphanumeric)
+      physical_mapping: acct_dest
+
+    transaction_timestamp:
+      type: string
+      format: date-time
+      description: "UTC timestamp of the transaction"
+      physical_mapping: tx_ts
+
+  required: [account_source_id, account_destination_id, transaction_timestamp]
+
+# ───────────────────────────────────────────────────────────────────────────
+# 3. SERVICE LEVEL AGREEMENTS (SLAs)
+# ───────────────────────────────────────────────────────────────────────────
+sla:
+  freshness:
+    threshold: "500ms"
+    description: |
+      Near-instantaneous availability required for real-time
+      fraud scoring
+
+# ───────────────────────────────────────────────────────────────────────────
+# 4. DATA QUALITY RULES
+# ───────────────────────────────────────────────────────────────────────────
+quality:
+  - name: account_source_format_pattern
+    type: validity
+    expression: "REGEXP_LIKE(account_source_id, '^[A-Z0-9]{10}$')"
+    threshold: "100%"
+    enforcement: hard
+    description: |
+      Account source IDs must be exactly 10 uppercase alphanumeric
+      characters. BLOCK PIPELINE on violation.
+
+  - name: account_destination_format_pattern
+    type: validity
+    expression: "REGEXP_LIKE(account_destination_id, '^[A-Z0-9]{10}$')"
+    threshold: "100%"
+    enforcement: hard
+    description: |
+      Account destination IDs must be exactly 10 uppercase
+      alphanumeric characters. BLOCK PIPELINE on violation.

@@ -1,0 +1,158 @@
+---
+# ═══════════════════════════════════════════════════════════════════════════
+# DATA CONTRACT: CityMove Ride-Share
+# ═══════════════════════════════════════════════════════════════════════════
+#
+# NEGOTIATION SUMMARY
+# ───────────────────
+# Producer: CityMove Data Engineering Team
+# Consumer: Dynamic Pricing Algorithm (Machine Learning Team)
+#
+# Agreed Terms:
+#   - Stable logical interface to decouple ML models from raw DB
+#     schema changes.
+#   - Freshness: Data must be available within 30 minutes of ride completion.
+#   - Quality: Critical bounds for fare, rating, and distance to prevent
+#     model crashes.
+#   - Privacy: Passenger ID flagged as PII for compliance.
+#
+# Signed off: 2026-02-07 by Data Eng Lead & ML Lead
+# ═══════════════════════════════════════════════════════════════════════════
+
+dataContractSpecification: 0.9.3
+id: urn:datacontract:citymove:rides
+version: 1.0.0
+
+# ───────────────────────────────────────────────────────────────────────────
+# 1. OWNERSHIP & GOVERNANCE
+# ───────────────────────────────────────────────────────────────────────────
+info:
+  title: "CityMove Ride Log"
+  description: |
+    Completed ride records from the CityMove platform.
+    Includes timestamps, distance, fare, and driver ratings.
+    Used primarily for training and serving the Dynamic Pricing Algorithm.
+  owner: "Data Engineering Team"
+  contact:
+    name: "Sahil Kamboj"
+    email: "b23cs1061@iitj.ac.in"
+    slack: "#data-eng-rides"
+  classification: confidential
+  tags: [rideshare, pricing, pii, revenue]
+
+# ───────────────────────────────────────────────────────────────────────────
+# 2. SCHEMA DEFINITION (Logical Contract)
+# ───────────────────────────────────────────────────────────────────────────
+schema:
+  type: object
+  properties:
+    ride_id:
+      type: string
+      format: uuid
+      description: "Unique identifier for the ride"
+      pii: false
+      physical_mapping: r_id
+
+    pickup_timestamp:
+      type: string
+      format: date-time
+      description: "UTC timestamp when the ride started"
+      pii: false
+      physical_mapping: ts_start
+
+    passenger_id:
+      type: integer
+      description: "Unique identifier for the passenger. Highly sensitive PII."
+      pii: true
+      physical_mapping: pax_id
+
+    driver_rating:
+      type: number
+      description: "Rating given to the driver by the passenger (1.0 - 5.0)"
+      minimum: 1.0
+      maximum: 5.0
+      pii: false
+      physical_mapping: d_rating
+
+    fare_amount:
+      type: number
+      description: "Total fare amount in USD"
+      minimum: 0.0
+      pii: false
+      physical_mapping: fare_final
+
+    distance_meters:
+      type: integer
+      description: "Total flight distance in meters"
+      minimum: 0
+      pii: false
+      physical_mapping: dist_m
+
+  required:
+    [
+      ride_id,
+      pickup_timestamp,
+      passenger_id,
+      driver_rating,
+      fare_amount,
+      distance_meters,
+    ]
+
+# ───────────────────────────────────────────────────────────────────────────
+# 3. SERVICE LEVEL AGREEMENTS (SLAs)
+# ───────────────────────────────────────────────────────────────────────────
+sla:
+  freshness:
+    threshold: "30 minutes"
+    description: |
+      Time from ride completion to data availability in the
+      analytics layer
+  availability:
+    percentage: "99.9%"
+    description: "Uptime commitment for the rides data product"
+  retention:
+    period: "3 years"
+    description: "Standard data retention policy for operational audit"
+
+# ───────────────────────────────────────────────────────────────────────────
+# 4. DATA QUALITY RULES
+# ───────────────────────────────────────────────────────────────────────────
+quality:
+  - name: fare_amount_non_negative
+    type: validity
+    expression: "fare_amount >= 0"
+    threshold: "100%"
+    enforcement: hard
+    description: |
+      Fare must never be negative to avoid breaking pricing models
+
+  - name: driver_rating_range
+    type: validity
+    expression: "driver_rating >= 1.0 AND driver_rating <= 5.0"
+    threshold: "100%"
+    enforcement: hard
+    description: "Driver rating must be within the standard 1-5 scale"
+
+  - name: distance_not_null
+    type: completeness
+    column: distance_meters
+    threshold: "100%"
+    enforcement: hard
+    description: "Distance traveled must always be recorded"
+
+  - name: ride_id_uniqueness
+    type: uniqueness
+    column: ride_id
+    threshold: "100%"
+    enforcement: hard
+    description: "Every ride must have a globally unique identifier"
+
+lineage:
+  sources:
+    - name: citymove_rides_db
+      type: postgresql
+      table: raw_rides_log_v2
+  consumers:
+    - name: dynamic-pricing-algo
+      team: ml-team
+      usage: "Input for model retraining and real-time inference"
