@@ -1,0 +1,33 @@
+🐳 Docker Instructions
+=====================
+
+1️⃣ Prerequisites
+----------------
+Ensure Docker is installed:
+docker --version
+
+2️⃣ Development Docker Image (Training)
+---------------------------------------
+Build image:
+docker build -t mlops-assignment3 .
+
+Run container:
+docker run --rm -it mlops-assignment3
+
+This will:
+- Download dataset
+- Train model
+- Save model
+- Push model to Hugging Face
+
+3️⃣ Production Docker Image (Evaluation Only)
+---------------------------------------------
+Build production image:
+docker build -f Dockerfile.prod -t mlops-assignment3-prod .
+
+Run production container:
+docker run --rm mlops-assignment3-prod
+
+This will:
+- Pull model from Hugging Face Hub
+- Run evaluation automatically
