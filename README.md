@@ -69,6 +69,8 @@ Architecture constants (fixed): `d_model=512`, `num_layers=6`
 - **Trials:** 10 total, 1 concurrent (GPU memory constrained)
 - **Epochs per trial:** capped at 25
 
+![Ray Tune Optimization](images/i1.png)
+
 ### Best Configuration Found
 
 ```python
@@ -96,6 +98,8 @@ The best configuration from the sweep was retrained for **50 epochs** (half the 
 | Epochs | 100 | **50** |
 | Final Training Loss | 0.0988 | 0.1564 |
 | BLEU Score (NLTK) | 69.39% | **73.70%** |
+
+![Final Comparison & BLEU Performance](images/i2.png)
 
 ---
 
