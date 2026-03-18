@@ -10,9 +10,19 @@
 | File | Description |
 |------|-------------|
 | `b23cs1061_ass_4_tuned_en_to_hi.ipynb` | Main notebook — baseline + Ray Tune + Optuna + final comparison |
-| `b23cs1061_ass_4_best_model.pth` | Saved weights of the best-performing model from the tuning sweep |
+| [`b23cs1061_ass_4_best_model.pth`](https://huggingface.co/sps1001/b23cs1061_ass_4_best_model.pth/blob/main/b23cs1061_ass_4_best_model.pth) | Saved weights of the best-performing model from the tuning sweep |
 | `b23cs1061_ass_4_report.pdf` | 1–2 page report with baseline metrics, hyperparameter ranges, best config, and final results |
 | `English-Hindi.tsv` | Dataset — 13,186 English-Hindi sentence pairs |
+| [Hugging Face Repository](https://huggingface.co/sps1001/b23cs1061_ass_4_best_model.pth/blob/main/b23cs1061_ass_4_best_model.pth) | Public repository for model weights |
+
+----
+
+## Hugging Face Model
+Access the best-performing model weights on Hugging Face:
+- **Link:** [sps1001/b23cs1061_ass_4_best_model.pth](https://huggingface.co/sps1001/b23cs1061_ass_4_best_model.pth/blob/main/b23cs1061_ass_4_best_model.pth)
+- **Branch:** `main`
+- **File:** `b23cs1061_ass_4_best_model.pth`
+
 
 ---
 
@@ -136,3 +146,4 @@ A from-scratch PyTorch Transformer with:
    - **Cells 1–61:** Data loading, vocab building, baseline training (100 epochs)
    - **Cells 62–77:** Ray Tune + Optuna sweep (10 trials × 25 epochs)
    - **Cells 78–83:** Best config retrain (50 epochs) + BLEU evaluation + comparison
+
