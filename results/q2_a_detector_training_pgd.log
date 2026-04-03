@@ -1,0 +1,176 @@
+nohup: ignoring input
+/home/b23cs1037/otaal/ops-ass-5/q2/utils/checkpoints.py:38: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  payload = torch.load(path, map_location=map_location)
+Files already downloaded and verified
+Files already downloaded and verified
+generate pgd adv:   0%|          | 0/40 [00:00<?, ?it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  2.04it/s][A
+                                                            [ADEBUG x_adv.shape (should be NCHW): (256, 3, 32, 32)
+
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.25it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.18it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.42it/s][A
+                                                            [Agenerate pgd adv:  10%|█         | 4/40 [00:01<00:09,  3.66it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  6.63it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  4.36it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.63it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.52it/s][A
+                                                            [Agenerate pgd adv:  20%|██        | 8/40 [00:02<00:08,  3.82it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.48it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.49it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.55it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  4.07it/s][A
+                                                            [Agenerate pgd adv:  30%|███       | 12/40 [00:03<00:07,  3.61it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  4.02it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.77it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.57it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.49it/s][A
+                                                            [Agenerate pgd adv:  40%|████      | 16/40 [00:04<00:06,  3.54it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.49it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.41it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.87it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.42it/s][A
+                                                            [Agenerate pgd adv:  50%|█████     | 20/40 [00:05<00:05,  3.44it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.58it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.47it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.51it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.48it/s][A
+                                                            [Agenerate pgd adv:  60%|██████    | 24/40 [00:06<00:04,  3.38it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.52it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.46it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.47it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.87it/s][A
+                                                            [Agenerate pgd adv:  70%|███████   | 28/40 [00:08<00:03,  3.36it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.76it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.61it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.47it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.44it/s][A
+                                                            [Agenerate pgd adv:  80%|████████  | 32/40 [00:09<00:02,  3.34it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.46it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.50it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.52it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.50it/s][A
+                                                            [Agenerate pgd adv:  90%|█████████ | 36/40 [00:10<00:01,  3.31it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.62it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.67it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.67it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.43it/s][A
+                                                            [Agenerate pgd adv: 100%|██████████| 40/40 [00:11<00:00,  3.33it/s]                                                                 wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/b23cs1037/.netrc.
+wandb: Currently logged in as: ikamboj-919 (ikamboj-919-iit-jodhpur) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 1lfee2h4
+wandb: Tracking run with wandb version 0.25.1
+wandb: Run data is saved locally in /home/b23cs1037/otaal/ops-ass-5/wandb/run-20260402_091031-1lfee2h4
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run q2-detector-pgd-resnet34
+wandb: ⭐️ View project at https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5
+wandb: 🚀 View run at https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5/runs/1lfee2h4
+DEBUG labels (first 10):
+  y_clean[:10] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  y_adv[:10]   = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+DEBUG dataset shapes: (10000, 3, 32, 32) (10000, 3, 32, 32)
+DEBUG mean |x_clean - x_adv|: 0.2325456589460373
+detector train 1/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 1/10:  71%|███████▏  | 45/63 [00:01<00:00, 44.56it/s]                                                                    Epoch 01 | train acc 0.5372 | test acc 0.5510 | 0.03 min
+detector train 2/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 2/10:  87%|████████▋ | 55/63 [00:01<00:00, 54.94it/s]                                                                    Epoch 02 | train acc 0.8419 | test acc 0.7208 | 0.02 min
+detector train 3/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 3/10: 100%|██████████| 63/63 [00:01<00:00, 62.38it/s]                                                                    Epoch 03 | train acc 0.9487 | test acc 0.9443 | 0.02 min
+detector train 4/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 4/10:  75%|███████▍  | 47/63 [00:01<00:00, 46.41it/s]                                                                    Epoch 04 | train acc 0.9665 | test acc 0.8954 | 0.02 min
+detector train 5/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 5/10:  78%|███████▊  | 49/63 [00:01<00:00, 48.46it/s]                                                                    Epoch 05 | train acc 0.9699 | test acc 0.9433 | 0.02 min
+detector train 6/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 6/10:  70%|██████▉   | 44/63 [00:01<00:00, 43.74it/s]                                                                    Epoch 06 | train acc 0.9794 | test acc 0.9623 | 0.03 min
+detector train 7/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 7/10:  79%|███████▉  | 50/63 [00:01<00:00, 48.83it/s]                                                                    Epoch 07 | train acc 0.9851 | test acc 0.9488 | 0.02 min
+detector train 8/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 8/10:  73%|███████▎  | 46/63 [00:01<00:00, 45.15it/s]                                                                    Epoch 08 | train acc 0.9887 | test acc 0.9756 | 0.02 min
+detector train 9/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 9/10:  73%|███████▎  | 46/63 [00:01<00:00, 45.54it/s]                                                                    Epoch 09 | train acc 0.9868 | test acc 0.8045 | 0.02 min
+detector train 10/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 10/10:  67%|██████▋   | 42/63 [00:01<00:00, 41.30it/s]                                                                     Epoch 10 | train acc 0.9857 | test acc 0.9463 | 0.03 min
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s]PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.11it/s]                                                            wandb: updating run metadata
+wandb: uploading media/images/viz/clean_samples_10_43916c600820b2591be1.png; uploading media/images/viz/adv_samples_10_17dd856a7d6c3e160094.png; uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading media/images/viz/clean_samples_10_43916c600820b2591be1.png; uploading media/images/viz/adv_samples_10_17dd856a7d6c3e160094.png
+wandb: uploading history steps 9-10, summary, console lines 0-0
+wandb: uploading console lines 10-10
+wandb: 
+wandb: Run history:
+wandb: detector/best_test_acc ▁
+wandb:      detector/test_acc ▁▄▇▇▇███▅█
+wandb:     detector/train_acc ▁▆▇███████
+wandb:    detector/train_loss █▄▂▂▁▁▁▁▁▁
+wandb:                  epoch ▁▂▃▃▄▅▆▆▇█
+wandb: 
+wandb: Run summary:
+wandb: detector/best_test_acc 0.97559
+wandb:      detector/test_acc 0.94629
+wandb:     detector/train_acc 0.98574
+wandb:    detector/train_loss 0.04172
+wandb:                  epoch 10
+wandb: 
+wandb: 🚀 View run q2-detector-pgd-resnet34 at: https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5/runs/1lfee2h4
+wandb: ⭐️ View project at: https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5
+wandb: Synced 5 W&B file(s), 2 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260402_091031-1lfee2h4/logs
+Done. Best detector test acc: 0.9756
+Best detector checkpoint: q2/outputs/detector/pgd/best_q2-detector-pgd-resnet34.pt

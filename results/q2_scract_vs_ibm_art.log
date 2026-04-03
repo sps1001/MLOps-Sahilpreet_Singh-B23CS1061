@@ -1,0 +1,46 @@
+nohup: ignoring input
+/home/b23cs1037/otaal/ops-ass-5/q2/utils/checkpoints.py:38: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  payload = torch.load(path, map_location=map_location)
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/b23cs1037/.netrc.
+wandb: Currently logged in as: ikamboj-919 (ikamboj-919-iit-jodhpur) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run gmgefz8f
+wandb: Tracking run with wandb version 0.25.1
+wandb: Run data is saved locally in /home/b23cs1037/otaal/ops-ass-5/wandb/run-20260402_085235-gmgefz8f
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run q2-fgsm-compare
+wandb: ⭐️ View project at https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5
+wandb: 🚀 View run at https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5/runs/gmgefz8f
+Files already downloaded and verified
+Files already downloaded and verified
+FGSM scratch eps=0.0:   0%|          | 0/40 [00:00<?, ?it/s]                                                            FGSM ART eps=0.0:   0%|          | 0/40 [00:00<?, ?it/s]                                                        FGSM scratch eps=0.002:   0%|          | 0/40 [00:00<?, ?it/s]                                                              FGSM ART eps=0.002:   0%|          | 0/40 [00:00<?, ?it/s]FGSM ART eps=0.002: 100%|██████████| 40/40 [00:01<00:00, 39.88it/s]                                                                   FGSM scratch eps=0.004:   0%|          | 0/40 [00:00<?, ?it/s]                                                              FGSM ART eps=0.004:   0%|          | 0/40 [00:00<?, ?it/s]FGSM ART eps=0.004:  98%|█████████▊| 39/40 [00:01<00:00, 38.90it/s]                                                                   FGSM scratch eps=0.008:   0%|          | 0/40 [00:00<?, ?it/s]                                                              FGSM ART eps=0.008:   0%|          | 0/40 [00:00<?, ?it/s]FGSM ART eps=0.008:  82%|████████▎ | 33/40 [00:01<00:00, 32.95it/s]                                                                   FGSM scratch eps=0.016:   0%|          | 0/40 [00:00<?, ?it/s]                                                              FGSM ART eps=0.016:   0%|          | 0/40 [00:00<?, ?it/s]FGSM ART eps=0.016:  88%|████████▊ | 35/40 [00:01<00:00, 34.54it/s]                                                                   FGSM scratch eps=0.031:   0%|          | 0/40 [00:00<?, ?it/s]                                                              FGSM ART eps=0.031:   0%|          | 0/40 [00:00<?, ?it/s]FGSM ART eps=0.031:  82%|████████▎ | 33/40 [00:01<00:00, 32.47it/s]                                                                   FGSM scratch eps=0.062:   0%|          | 0/40 [00:00<?, ?it/s]                                                              FGSM ART eps=0.062:   0%|          | 0/40 [00:00<?, ?it/s]FGSM ART eps=0.062:  85%|████████▌ | 34/40 [00:01<00:00, 33.47it/s]                                                                   wandb: uploading artifact run-gmgefz8f-tablesfgsm_eps_sweep-18dkzw; updating run metadata
+wandb: uploading artifact run-gmgefz8f-tablesfgsm_eps_sweep-18dkzw
+wandb: uploading artifact run-gmgefz8f-tablesfgsm_eps_sweep-18dkzw; uploading media/table/tables/fgsm_eps_sweep_7_e5fa0d6811ab889a10bc.table.json; uploading output.log; uploading wandb-summary.json; uploading config.yaml (+ 3 more)
+wandb: uploading artifact run-gmgefz8f-tablesfgsm_eps_sweep-18dkzw; uploading media/images/viz/original_7_d734f64ea2e5b4c1b30d.png; uploading media/images/viz/adv_scratch_7_f0b400f006a6754ea74b.png; uploading media/images/viz/adv_art_7_ca092e66a9d924767397.png
+wandb: uploading history steps 7-7, summary
+wandb: 
+wandb: Run history:
+wandb:                   eps ▁▁▁▂▃▅█
+wandb:        test/clean_acc ▁▁▁▁▁▁▁
+wandb:     test/fgsm_art_acc █▇▆▄▂▁▁
+wandb: test/fgsm_scratch_acc ██▇▇▆▄▁
+wandb: 
+wandb: Run summary:
+wandb:                   eps 0.062
+wandb:        test/clean_acc 0.86006
+wandb:     test/fgsm_art_acc 0.01572
+wandb: test/fgsm_scratch_acc 0.2667
+wandb: 
+wandb: 🚀 View run q2-fgsm-compare at: https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5/runs/gmgefz8f
+wandb: ⭐️ View project at: https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5
+wandb: Synced 5 W&B file(s), 4 media file(s), 2 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260402_085235-gmgefz8f/logs
+Clean acc: 0.8601
+eps=0.0000 scratch=0.8601 art=0.8601
+eps=0.0020 scratch=0.8376 art=0.7453
+eps=0.0040 scratch=0.8134 art=0.6237
+eps=0.0080 scratch=0.7702 art=0.4222
+eps=0.0160 scratch=0.6727 art=0.1849
+eps=0.0310 scratch=0.4997 art=0.0480
+eps=0.0620 scratch=0.2667 art=0.0157
+Saved: q2/outputs/fgsm/orig.png
+Saved: q2/outputs/fgsm/adv_scratch_eps0.062.png

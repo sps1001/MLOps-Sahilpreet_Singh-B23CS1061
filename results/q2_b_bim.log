@@ -1,0 +1,176 @@
+nohup: ignoring input
+/home/b23cs1037/otaal/ops-ass-5/q2/utils/checkpoints.py:38: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  payload = torch.load(path, map_location=map_location)
+Files already downloaded and verified
+Files already downloaded and verified
+generate bim adv:   0%|          | 0/40 [00:00<?, ?it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  2.05it/s][A
+                                                            [ADEBUG x_adv.shape (should be NCHW): (256, 3, 32, 32)
+
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.26it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.26it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [Agenerate bim adv:  10%|█         | 4/40 [00:01<00:09,  3.69it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.43it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.29it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [Agenerate bim adv:  28%|██▊       | 11/40 [00:02<00:05,  5.42it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.29it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.25it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.26it/s][A
+                                                            [Agenerate bim adv:  45%|████▌     | 18/40 [00:03<00:03,  5.98it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.28it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.14it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.11it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  7.18it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  5.05it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.77it/s][A
+                                                            [Agenerate bim adv:  60%|██████    | 24/40 [00:04<00:02,  5.73it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.62it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.57it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.57it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.54it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.56it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.56it/s][A
+                                                            [Agenerate bim adv:  75%|███████▌  | 30/40 [00:06<00:02,  4.55it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.60it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.53it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.51it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.52it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.51it/s][A
+                                                            [Agenerate bim adv:  88%|████████▊ | 35/40 [00:07<00:01,  4.08it/s]
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.53it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.73it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.71it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  4.22it/s][A
+                                                            [A
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  3.69it/s][A
+                                                            [Agenerate bim adv: 100%|██████████| 40/40 [00:09<00:00,  3.88it/s]                                                                 wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/b23cs1037/.netrc.
+wandb: Currently logged in as: ikamboj-919 (ikamboj-919-iit-jodhpur) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run p7l4uhui
+wandb: Tracking run with wandb version 0.25.1
+wandb: Run data is saved locally in /home/b23cs1037/otaal/ops-ass-5/wandb/run-20260402_091244-p7l4uhui
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run q2-detector-bim-resnet34
+wandb: ⭐️ View project at https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5
+wandb: 🚀 View run at https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5/runs/p7l4uhui
+DEBUG labels (first 10):
+  y_clean[:10] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  y_adv[:10]   = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+DEBUG dataset shapes: (10000, 3, 32, 32) (10000, 3, 32, 32)
+DEBUG mean |x_clean - x_adv|: 0.2325456589460373
+detector train 1/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 1/10:  67%|██████▋   | 42/63 [00:01<00:00, 41.52it/s]                                                                    Epoch 01 | train acc 0.5642 | test acc 0.6687 | 0.03 min
+detector train 2/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 2/10:  71%|███████▏  | 45/63 [00:01<00:00, 44.57it/s]                                                                    Epoch 02 | train acc 0.8541 | test acc 0.7671 | 0.03 min
+detector train 3/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 3/10:  68%|██████▊   | 43/63 [00:01<00:00, 42.65it/s]                                                                    Epoch 03 | train acc 0.9456 | test acc 0.8808 | 0.03 min
+detector train 4/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 4/10:  71%|███████▏  | 45/63 [00:01<00:00, 44.57it/s]                                                                    Epoch 04 | train acc 0.9634 | test acc 0.9468 | 0.03 min
+detector train 5/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 5/10:  75%|███████▍  | 47/63 [00:01<00:00, 46.57it/s]                                                                    Epoch 05 | train acc 0.9746 | test acc 0.9327 | 0.02 min
+detector train 6/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 6/10:  71%|███████▏  | 45/63 [00:01<00:00, 44.31it/s]                                                                    Epoch 06 | train acc 0.9731 | test acc 0.9574 | 0.03 min
+detector train 7/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 7/10:  79%|███████▉  | 50/63 [00:01<00:00, 49.64it/s]                                                                    Epoch 07 | train acc 0.9827 | test acc 0.9346 | 0.02 min
+detector train 8/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 8/10:  78%|███████▊  | 49/63 [00:01<00:00, 48.43it/s]                                                                    Epoch 08 | train acc 0.9831 | test acc 0.7567 | 0.02 min
+detector train 9/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 9/10:  71%|███████▏  | 45/63 [00:01<00:00, 44.14it/s]                                                                    Epoch 09 | train acc 0.9859 | test acc 0.8696 | 0.03 min
+detector train 10/10:   0%|          | 0/63 [00:00<?, ?it/s]detector train 10/10:  76%|███████▌  | 48/63 [00:01<00:00, 47.83it/s]                                                                     Epoch 10 | train acc 0.9851 | test acc 0.9600 | 0.02 min
+PGD - Batches:   0%|          | 0/1 [00:00<?, ?it/s]PGD - Batches: 100%|██████████| 1/1 [00:00<00:00,  4.23it/s]                                                            wandb: updating run metadata
+wandb: uploading media/images/viz/clean_samples_10_43916c600820b2591be1.png; uploading media/images/viz/adv_samples_10_17dd856a7d6c3e160094.png; uploading output.log; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading media/images/viz/clean_samples_10_43916c600820b2591be1.png; uploading media/images/viz/adv_samples_10_17dd856a7d6c3e160094.png; uploading wandb-summary.json; uploading config.yaml
+wandb: uploading media/images/viz/adv_samples_10_17dd856a7d6c3e160094.png
+wandb: uploading history steps 8-10, summary, console lines 0-0
+wandb: 
+wandb: Run history:
+wandb: detector/best_test_acc ▁
+wandb:      detector/test_acc ▁▃▆█▇█▇▃▆█
+wandb:     detector/train_acc ▁▆▇███████
+wandb:    detector/train_loss █▄▂▂▁▁▁▁▁▁
+wandb:                  epoch ▁▂▃▃▄▅▆▆▇█
+wandb: 
+wandb: Run summary:
+wandb: detector/best_test_acc 0.95996
+wandb:      detector/test_acc 0.95996
+wandb:     detector/train_acc 0.98512
+wandb:    detector/train_loss 0.04026
+wandb:                  epoch 10
+wandb: 
+wandb: 🚀 View run q2-detector-bim-resnet34 at: https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5/runs/p7l4uhui
+wandb: ⭐️ View project at: https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5
+wandb: Synced 5 W&B file(s), 2 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260402_091244-p7l4uhui/logs
+Done. Best detector test acc: 0.9600
+Best detector checkpoint: q2/outputs/detector/bim/best_q2-detector-bim-resnet34.pt
