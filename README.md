@@ -10,41 +10,6 @@ This repository contains:
 - [W&B Project](https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5)
 - [Hugging Face Weights Repo](https://huggingface.co/sps1001/Assignment-5-ops/tree/main)
 
-### Repository Navigation
-- [Root README](README.md)
-- [Q1 Package](q1)
-- [Q2 Package](q2)
-- [Q2 README](q2/README.md)
-- [Results Folder](results)
-- [Results README](results/README.md)
-- [HF/GitHub Push Notes](results/push_to_hf_and_github.md)
-- [HF/GitHub Push Notes v2](results/push_checkpoints_hf_github_v2.md)
-
-### Main Training / Eval Scripts
-- [Q1 Train ViT (baseline/LoRA)](q1/train_vit_cifar100.py)
-- [Q1 Evaluate ViT](q1/eval_vit_cifar100.py)
-- [Q1 Optuna Search](q1/optuna_lora_search.py)
-- [Q1 Grid Runs](q1/run_grid.py)
-- [Q2 Train ResNet18](q2/train_resnet18_cifar10.py)
-- [Q2 FGSM Compare (scratch vs ART)](q2/fgsm_compare.py)
-- [Q2 Train Detector (PGD/BIM)](q2/train_detector.py)
-
-### Output Directories
-- [Q1 Outputs](q1/outputs)
-- [Q2 Outputs](q2/outputs)
-
-### Jump to Sections in This README
-- [Docker Build](#docker-build)
-- [Docker Run](#docker-run)
-- [Baseline (head-only, no LoRA)](#baseline-head-only-no-lora)
-- [LoRA Run (Q/K/V)](#lora-run-qkv)
-- [Optuna Search (LoRA rank/alpha only)](#optuna-search-lora-rankalpha-only)
-- [Eval (overall + class-wise histogram)](#eval-overall--class-wise-histogram)
-- [Q1 Results Tables](#q1--table-1-baseline-head-only-trainingvalidation-10-epochs)
-- [Testing Results (CIFAR-100 test set)](#testing-results-cifar-100-test-set)
-- [Q2 Results (CIFAR-10)](#q2-results-cifar-10--fgsm-pgd-bim-ibm-art)
-- [How to Reproduce Q2](#how-to-reproduce-q2-docker--exact-commands)
-
 W&B project (for figures, class-wise histograms, and gradients):
 https://wandb.ai/ikamboj-919-iit-jodhpur/final-ops-ass-5
 
