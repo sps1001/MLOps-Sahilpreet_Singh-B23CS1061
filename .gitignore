@@ -68,7 +68,7 @@ metrics_*/
 config_*/
 
 # Optuna trial outputs
-
+hf-assign5/
 
 # Logging and temporary files
 
