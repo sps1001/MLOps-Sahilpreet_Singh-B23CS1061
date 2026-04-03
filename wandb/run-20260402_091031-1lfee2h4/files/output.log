@@ -1,0 +1,11 @@
+                                                                     
+Epoch 01 | train acc 0.5372 | test acc 0.5510 | 0.03 min
+Epoch 02 | train acc 0.8419 | test acc 0.7208 | 0.02 min
+Epoch 03 | train acc 0.9487 | test acc 0.9443 | 0.02 min
+Epoch 04 | train acc 0.9665 | test acc 0.8954 | 0.02 min
+Epoch 05 | train acc 0.9699 | test acc 0.9433 | 0.02 min
+Epoch 06 | train acc 0.9794 | test acc 0.9623 | 0.03 min
+Epoch 07 | train acc 0.9851 | test acc 0.9488 | 0.02 min
+Epoch 08 | train acc 0.9887 | test acc 0.9756 | 0.02 min
+Epoch 09 | train acc 0.9868 | test acc 0.8045 | 0.02 min
+Epoch 10 | train acc 0.9857 | test acc 0.9463 | 0.03 min

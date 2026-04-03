@@ -1,0 +1,1 @@
+{"test/acc":0.8567049050632911,"best_test_acc":0.8582871835443038,"epoch":30,"train/acc":0.9142183504446083,"train/loss":0.2510716945428373,"time/epoch_s":6.54896879196167,"test/loss":0.44195944853598557,"best_ckpt":"q2/outputs/best_q2-resnet18-cifar10.pt","_runtime":185,"lr":0,"_wandb":{"runtime":185},"_timestamp":1.7751195614995203e+09,"_step":29}

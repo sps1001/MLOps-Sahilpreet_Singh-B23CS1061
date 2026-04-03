@@ -1,0 +1,100 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            dzcazspbfnxdcuy1p5md19tihgvceylc:
+                args:
+                    - --trials
+                    - "15"
+                    - --epochs
+                    - "3"
+                    - --limit-train-batches
+                    - "50"
+                    - --limit-val-batches
+                    - "10"
+                    - --device
+                    - cuda
+                    - --wandb
+                    - "1"
+                    - --wandb-entity
+                    - ikamboj-919-iit-jodhpur
+                    - --wandb-project
+                    - final-ops-ass-5
+                email: ikamboj.919@gmail.com
+                executable: /home/b23cs1037/otaal/ops-ass-5/.venv/bin/python
+                host: l40s
+                os: Linux-6.8.0-60-generic-x86_64-with-glibc2.39
+                program: -m q1.optuna_lora_search
+                python: CPython 3.10.17
+                root: /home/b23cs1037/otaal/ops-ass-5
+                startedAt: "2026-04-01T22:29:03.029528Z"
+                writerId: dzcazspbfnxdcuy1p5md19tihgvceylc
+        m: []
+        python_version: 3.10.17
+        t:
+            "1":
+                - 1
+                - 11
+                - 35
+                - 41
+                - 49
+                - 71
+                - 98
+            "2":
+                - 1
+                - 11
+                - 35
+                - 41
+                - 49
+                - 71
+                - 98
+            "3":
+                - 2
+                - 13
+                - 16
+                - 62
+            "4": 3.10.17
+            "5": 0.25.1
+            "6": 4.57.6
+            "12": 0.25.1
+            "13": linux-x86_64
+batch_size:
+    value: 64
+best_params:
+    value:
+        alpha: 8
+        rank: 4
+best_val_acc:
+    value: 0.0234375
+device:
+    value: cuda
+epochs:
+    value: 3
+hf_token:
+    value: null
+limit_train_batches:
+    value: 50
+limit_val_batches:
+    value: 10
+lr:
+    value: 0.0002
+model_name:
+    value: WinKawaks/vit-small-patch16-224
+num_workers:
+    value: 0
+output_dir:
+    value: q1/outputs/optuna
+seed:
+    value: 42
+trials:
+    value: 15
+val_split:
+    value: 5000
+wandb:
+    value: true
+wandb_entity:
+    value: ikamboj-919-iit-jodhpur
+wandb_project:
+    value: final-ops-ass-5
+weight_decay:
+    value: 0.01

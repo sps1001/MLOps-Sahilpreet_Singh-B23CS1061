@@ -1,0 +1,99 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+virtualenv/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# ML model outputs and checkpoints
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.pickle
+
+# Training outputs and metrics
+*.csv
+metrics_*/
+config_*/
+
+# Optuna trial outputs
+
+
+# Logging and temporary files
+
+*.tmp
+tmp/
+temp/
+
+# Data and cache
+data/
+datasets/
+*.cache
+
+# Environment variables
+.env
+.env.local
+
+# WandB
+
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large files
+*.zip
+*.tar.gz
+*.tar
+*.rar

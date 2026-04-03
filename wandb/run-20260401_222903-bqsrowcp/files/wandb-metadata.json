@@ -1,0 +1,29 @@
+{
+  "os": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.17",
+  "startedAt": "2026-04-01T22:29:03.029528Z",
+  "args": [
+    "--trials",
+    "15",
+    "--epochs",
+    "3",
+    "--limit-train-batches",
+    "50",
+    "--limit-val-batches",
+    "10",
+    "--device",
+    "cuda",
+    "--wandb",
+    "1",
+    "--wandb-entity",
+    "ikamboj-919-iit-jodhpur",
+    "--wandb-project",
+    "final-ops-ass-5"
+  ],
+  "program": "-m q1.optuna_lora_search",
+  "email": "ikamboj.919@gmail.com",
+  "root": "/home/b23cs1037/otaal/ops-ass-5",
+  "host": "l40s",
+  "executable": "/home/b23cs1037/otaal/ops-ass-5/.venv/bin/python",
+  "writerId": "dzcazspbfnxdcuy1p5md19tihgvceylc"
+}

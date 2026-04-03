@@ -1,0 +1,61 @@
+Device: cpu
+Mode: baseline | model: WinKawaks/vit-small-patch16-224 | image_size: 224
+Trainable params: 38,500
+Output dir: q1/outputs
+Starting training.
+Traceback (most recent call last):                                       
+  File "/home/b23cs1037/.local/share/uv/python/cpython-3.10.17-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/b23cs1037/.local/share/uv/python/cpython-3.10.17-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 406, in <module>
+    main()
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 263, in main
+    best_val_acc, best_path = train(cfg)
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 326, in train
+    train_loss, train_acc, _ = train_one_epoch(
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 169, in train_one_epoch
+    outputs = model(pixel_values=images, labels=labels)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 668, in forward
+    outputs: BaseModelOutputWithPooling = self.vit(
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 1072, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 485, in forward
+    encoder_outputs: BaseModelOutput = self.encoder(embedding_output, head_mask=head_mask)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 368, in forward
+    hidden_states = layer_module(hidden_states, layer_head_mask)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/modeling_layers.py", line 94, in __call__
+    return super().__call__(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 350, in forward
+    layer_output = self.intermediate(layer_output)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 310, in forward
+    hidden_states = self.dense(hidden_states)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1779, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1790, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

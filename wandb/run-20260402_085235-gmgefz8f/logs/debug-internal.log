@@ -1,0 +1,19 @@
+{"time":"2026-04-02T08:52:35.405474986Z","level":"INFO","msg":"wandb-core"}
+{"time":"2026-04-02T08:52:35.407011273Z","level":"INFO","msg":"stream: starting","core version":"0.25.1"}
+{"time":"2026-04-02T08:52:35.87794066Z","level":"INFO","msg":"stream: created new stream","id":"gmgefz8f"}
+{"time":"2026-04-02T08:52:35.878013082Z","level":"INFO","msg":"handler: started"}
+{"time":"2026-04-02T08:52:35.878056787Z","level":"INFO","msg":"stream: started"}
+{"time":"2026-04-02T08:52:35.878080193Z","level":"INFO","msg":"sender: started"}
+{"time":"2026-04-02T08:52:35.878090506Z","level":"INFO","msg":"writer: started","stream_id":"gmgefz8f"}
+{"time":"2026-04-02T08:52:37.665853272Z","level":"INFO","msg":"filestream: sending request","total_files":1,"console_offset":0,"console_lines":1}
+{"time":"2026-04-02T08:52:38.253491783Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-02T08:52:52.66596953Z","level":"INFO","msg":"filestream: sending request","total_files":4,"history_offset":0,"history_lines":7,"events_offset":0,"events_lines":2,"console_offset":0,"console_lines":1,"uploaded_len":2}
+{"time":"2026-04-02T08:52:53.485087627Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-02T08:52:58.630087247Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-04-02T08:52:58.630449807Z","level":"INFO","msg":"filestream: sending request","total_files":2,"history_offset":7,"history_lines":1,"uploaded_len":7,"complete":true,"exit_code":0}
+{"time":"2026-04-02T08:52:59.38405886Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-04-02T08:52:59.386149422Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-04-02T08:52:59.393428779Z","level":"INFO","msg":"stream: closing"}
+{"time":"2026-04-02T08:52:59.393450171Z","level":"INFO","msg":"handler: closed"}
+{"time":"2026-04-02T08:52:59.393530397Z","level":"INFO","msg":"sender: closed"}
+{"time":"2026-04-02T08:52:59.393541145Z","level":"INFO","msg":"stream: closed"}

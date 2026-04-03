@@ -1,0 +1,112 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            l6cudoe7jbhqe6vetwv5mzliohxnqx34:
+                args:
+                    - --attack
+                    - pgd
+                    - --base-ckpt
+                    - q2/outputs/best_q2-resnet18-cifar10.pt
+                    - --eps
+                    - "0.062745098"
+                    - --steps
+                    - "20"
+                    - --step-size
+                    - "0.015686275"
+                    - --epochs
+                    - "10"
+                    - --device
+                    - cuda
+                    - --wandb
+                    - "1"
+                    - --wandb-entity
+                    - ikamboj-919-iit-jodhpur
+                    - --wandb-project
+                    - final-ops-ass-5
+                cpu_count: 48
+                cpu_count_logical: 96
+                cudaVersion: "12.4"
+                disk:
+                    /:
+                        total: "468714733568"
+                        used: "77009793024"
+                email: ikamboj.919@gmail.com
+                executable: /home/b23cs1037/otaal/ops-ass-5/.venv/bin/python
+                gpu: NVIDIA L40S
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-a2761933-c547-009d-9d08-afdd68afe289
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-38ad4b8c-aaba-a5c6-d467-c3e9e1248814
+                host: l40s
+                memory:
+                    total: "269920272384"
+                os: Linux-6.8.0-60-generic-x86_64-with-glibc2.39
+                program: -m q2.train_detector
+                python: CPython 3.10.17
+                root: /home/b23cs1037/otaal/ops-ass-5
+                startedAt: "2026-04-02T09:10:31.005633Z"
+                writerId: l6cudoe7jbhqe6vetwv5mzliohxnqx34
+        m: []
+        python_version: 3.10.17
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.10.17
+            "5": 0.25.1
+            "12": 0.25.1
+            "13": linux-x86_64
+attack:
+    value: pgd
+base_ckpt:
+    value: q2/outputs/best_q2-resnet18-cifar10.pt
+batch_size:
+    value: 256
+device:
+    value: cuda
+epochs:
+    value: 10
+eps:
+    value: 0.062745098
+lr:
+    value: 0.001
+n_vis:
+    value: 10
+num_workers:
+    value: 2
+out_dir:
+    value: q2/outputs/detector
+seed:
+    value: 42
+step_size:
+    value: 0.015686275
+steps:
+    value: 20
+wandb:
+    value: true
+wandb_entity:
+    value: ikamboj-919-iit-jodhpur
+wandb_project:
+    value: final-ops-ass-5
+wandb_run_name:
+    value: null

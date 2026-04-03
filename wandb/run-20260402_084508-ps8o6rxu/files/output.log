@@ -1,0 +1,42 @@
+Traceback (most recent call last):                          
+  File "/home/b23cs1037/.local/share/uv/python/cpython-3.10.17-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/b23cs1037/.local/share/uv/python/cpython-3.10.17-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/b23cs1037/otaal/ops-ass-5/q2/fgsm_compare.py", line 217, in <module>
+    main()
+  File "/home/b23cs1037/otaal/ops-ass-5/q2/fgsm_compare.py", line 176, in main
+    art_acc = _eval_adv_art(model, dls.test, device, eps=eps)
+  File "/home/b23cs1037/otaal/ops-ass-5/q2/fgsm_compare.py", line 144, in _eval_adv_art
+    x_adv_np = attack.generate(x=x_np, y=y.detach().cpu().numpy())
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/art/attacks/evasion/fast_gradient.py", line 263, in generate
+    adv_x = self._compute(
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/art/attacks/evasion/fast_gradient.py", line 550, in _compute
+    perturbation = self._compute_perturbation(batch, batch_labels, mask_batch, decay, momentum)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/art/attacks/evasion/fast_gradient.py", line 398, in _compute_perturbation
+    grad = self.estimator.loss_gradient(x, y) * (1 - 2 * int(self.targeted))
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/art/estimators/classification/pytorch.py", line 842, in loss_gradient
+    model_outputs = self._model(inputs_t)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/art/estimators/classification/pytorch.py", line 1165, in forward
+    x = self._model(x)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torchvision/models/resnet.py", line 285, in forward
+    return self._forward_impl(x)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torchvision/models/resnet.py", line 268, in _forward_impl
+    x = self.conv1(x)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+RuntimeError: Given groups=1, weight of size [64, 3, 7, 7], expected input[256, 32, 32, 3] to have 3 channels, but got 32 channels instead

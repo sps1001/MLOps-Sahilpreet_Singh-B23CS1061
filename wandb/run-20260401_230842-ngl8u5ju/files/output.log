@@ -1,0 +1,17 @@
+Device: cuda
+Mode: lora | model: WinKawaks/vit-small-patch16-224 | image_size: 224
+LoRA: rank=4 alpha=8 dropout=0.1
+Trainable params: 110,592
+Output dir: q1/outputs
+Starting training.
+                                                                          
+Epoch 01/10 | train loss 4.3584 acc 0.0579 | val loss 3.3715 acc 0.2051 | 0.98 min
+Epoch 02/10 | train loss 2.7394 acc 0.3698 | val loss 2.3815 acc 0.4557 | 0.96 min
+Epoch 03/10 | train loss 2.1295 acc 0.5242 | val loss 1.9997 acc 0.5424 | 0.97 min
+Epoch 04/10 | train loss 1.8244 acc 0.5980 | val loss 1.7710 acc 0.5951 | 0.97 min
+Epoch 05/10 | train loss 1.6220 acc 0.6463 | val loss 1.6102 acc 0.6328 | 0.97 min
+Epoch 06/10 | train loss 1.4696 acc 0.6825 | val loss 1.4730 acc 0.6682 | 0.96 min
+Epoch 07/10 | train loss 1.3506 acc 0.7118 | val loss 1.3854 acc 0.6910 | 0.96 min
+Epoch 08/10 | train loss 1.2554 acc 0.7345 | val loss 1.3009 acc 0.7141 | 0.97 min
+Epoch 09/10 | train loss 1.1730 acc 0.7544 | val loss 1.2338 acc 0.7318 | 0.97 min
+Epoch 10/10 | train loss 1.1042 acc 0.7700 | val loss 1.1837 acc 0.7418 | 0.96 min

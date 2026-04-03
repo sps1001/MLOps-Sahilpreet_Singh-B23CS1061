@@ -1,0 +1,64 @@
+Device: cuda
+Mode: lora | model: WinKawaks/vit-small-patch16-224 | image_size: 224
+LoRA: rank=4 alpha=8 dropout=0.1
+Trainable params: 110,592
+Output dir: q1/outputs
+Starting training.
+Traceback (most recent call last):
+  File "/home/b23cs1037/.local/share/uv/python/cpython-3.10.17-linux-x86_64-gnu/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/home/b23cs1037/.local/share/uv/python/cpython-3.10.17-linux-x86_64-gnu/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 406, in <module>
+    main()
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 263, in main
+    best_val_acc, best_path = train(cfg)
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 326, in train
+    train_loss, train_acc, _ = train_one_epoch(
+  File "/home/b23cs1037/otaal/ops-ass-5/q1/train_vit_cifar100.py", line 169, in train_one_epoch
+    outputs = model(pixel_values=images, labels=labels)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/peft/peft_model.py", line 2986, in forward
+    return self.base_model(
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/peft/tuners/tuners_utils.py", line 311, in forward
+    return self.model.forward(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 918, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 668, in forward
+    outputs: BaseModelOutputWithPooling = self.vit(
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/utils/generic.py", line 1072, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 481, in forward
+    embedding_output = self.embeddings(
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 107, in forward
+    embeddings = self.patch_embeddings(pixel_values, interpolate_pos_encoding=interpolate_pos_encoding)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/transformers/models/vit/modeling_vit.py", line 166, in forward
+    embeddings = self.projection(pixel_values).flatten(2).transpose(1, 2)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 554, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/b23cs1037/otaal/ops-ass-5/.venv/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 549, in _conv_forward
+    return F.conv2d(
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 38.00 MiB. GPU 0 has a total capacity of 44.52 GiB of which 26.25 MiB is free. Process 2044503 has 5.45 GiB memory in use. Process 2425586 has 37.09 GiB memory in use. Process 3347058 has 1.34 GiB memory in use. Including non-PyTorch memory, this process has 592.00 MiB memory in use. Of the allocated memory 158.09 MiB is allocated by PyTorch, and 9.91 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

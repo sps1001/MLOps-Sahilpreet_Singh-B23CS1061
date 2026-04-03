@@ -1,0 +1,63 @@
+{
+  "os": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.17",
+  "startedAt": "2026-04-02T09:07:33.230011Z",
+  "args": [
+    "--attack",
+    "bim",
+    "--base-ckpt",
+    "q2/outputs/best_q2-resnet18-cifar10.pt",
+    "--eps",
+    "0.031372549",
+    "--steps",
+    "20",
+    "--step-size",
+    "0.007843137",
+    "--epochs",
+    "10",
+    "--device",
+    "cuda",
+    "--wandb",
+    "1",
+    "--wandb-entity",
+    "ikamboj-919-iit-jodhpur",
+    "--wandb-project",
+    "final-ops-ass-5"
+  ],
+  "program": "-m q2.train_detector",
+  "email": "ikamboj.919@gmail.com",
+  "root": "/home/b23cs1037/otaal/ops-ass-5",
+  "host": "l40s",
+  "executable": "/home/b23cs1037/otaal/ops-ass-5/.venv/bin/python",
+  "cpu_count": 48,
+  "cpu_count_logical": 96,
+  "gpu": "NVIDIA L40S",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "468714733568",
+      "used": "77009772544"
+    }
+  },
+  "memory": {
+    "total": "269920272384"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-a2761933-c547-009d-9d08-afdd68afe289"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-38ad4b8c-aaba-a5c6-d467-c3e9e1248814"
+    }
+  ],
+  "cudaVersion": "12.4",
+  "writerId": "xx0gq4jerilr0w68ct499axxrb5ngeim"
+}

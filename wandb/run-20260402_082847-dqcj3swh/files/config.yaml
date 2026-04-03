@@ -1,0 +1,115 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            twjqznrtr22110ty1shp03pp0avk4zxf:
+                args:
+                    - --mode
+                    - lora
+                    - --model-name
+                    - WinKawaks/vit-small-patch16-224
+                    - --num-workers
+                    - "0"
+                    - --ckpt
+                    - q1/outputs/best_q1-lora-r8-a2-d0.1-full.pt
+                    - --rank
+                    - "8"
+                    - --alpha
+                    - "2"
+                    - --dropout
+                    - "0.1"
+                    - --wandb
+                    - "1"
+                    - --wandb-entity
+                    - ikamboj-919-iit-jodhpur
+                    - --wandb-project
+                    - final-ops-ass-5
+                cpu_count: 48
+                cpu_count_logical: 96
+                cudaVersion: "12.4"
+                disk:
+                    /:
+                        total: "468714733568"
+                        used: "77009666048"
+                email: ikamboj.919@gmail.com
+                executable: /home/b23cs1037/otaal/ops-ass-5/.venv/bin/python
+                gpu: NVIDIA L40S
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-a2761933-c547-009d-9d08-afdd68afe289
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-38ad4b8c-aaba-a5c6-d467-c3e9e1248814
+                host: l40s
+                memory:
+                    total: "269920272384"
+                os: Linux-6.8.0-60-generic-x86_64-with-glibc2.39
+                program: -m q1.eval_vit_cifar100
+                python: CPython 3.10.17
+                root: /home/b23cs1037/otaal/ops-ass-5
+                startedAt: "2026-04-02T08:28:47.591518Z"
+                writerId: twjqznrtr22110ty1shp03pp0avk4zxf
+        m: []
+        python_version: 3.10.17
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 71
+                - 98
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 71
+                - 98
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.10.17
+            "5": 0.25.1
+            "6": 4.57.6
+            "12": 0.25.1
+            "13": linux-x86_64
+alpha:
+    value: 2
+batch_size:
+    value: 256
+ckpt:
+    value: q1/outputs/best_q1-lora-r8-a2-d0.1-full.pt
+device:
+    value: cuda
+dropout:
+    value: 0.1
+hf_token:
+    value: null
+image_size:
+    value: 224
+limit_test_batches:
+    value: null
+mode:
+    value: lora
+model_name:
+    value: WinKawaks/vit-small-patch16-224
+num_workers:
+    value: 0
+rank:
+    value: 8
+wandb:
+    value: true
+wandb_entity:
+    value: ikamboj-919-iit-jodhpur
+wandb_project:
+    value: final-ops-ass-5
+wandb_run_name:
+    value: null

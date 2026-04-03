@@ -1,0 +1,144 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            bnksvfd80tvids28uh3qrc0vj3qh4125:
+                args:
+                    - --epochs
+                    - "10"
+                    - --batch-size
+                    - "128"
+                    - --lr
+                    - "0.0002"
+                    - --num-workers
+                    - "4"
+                    - --device
+                    - cuda
+                    - --wandb
+                    - "1"
+                    - --wandb-entity
+                    - ikamboj-919-iit-jodhpur
+                    - --wandb-project
+                    - final-ops-ass-5
+                    - --model-name
+                    - WinKawaks/vit-small-patch16-224
+                    - --mode
+                    - lora
+                    - --rank
+                    - "4"
+                    - --alpha
+                    - "4"
+                    - --dropout
+                    - "0.1"
+                    - --log-grad-norm-every
+                    - "10"
+                    - --wandb-run-name
+                    - q1-lora-r4-a4-d0.1-full
+                cpu_count: 48
+                cpu_count_logical: 96
+                cudaVersion: "12.4"
+                disk:
+                    /:
+                        total: "468714733568"
+                        used: "77013467136"
+                email: ikamboj.919@gmail.com
+                executable: /home/b23cs1037/otaal/ops-ass-5/.venv/bin/python
+                gpu: NVIDIA L40S
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-a2761933-c547-009d-9d08-afdd68afe289
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-38ad4b8c-aaba-a5c6-d467-c3e9e1248814
+                host: l40s
+                memory:
+                    total: "269920272384"
+                os: Linux-6.8.0-60-generic-x86_64-with-glibc2.39
+                program: -m q1.train_vit_cifar100
+                python: CPython 3.10.17
+                root: /home/b23cs1037/otaal/ops-ass-5
+                startedAt: "2026-04-01T22:58:37.394602Z"
+                writerId: bnksvfd80tvids28uh3qrc0vj3qh4125
+        m: []
+        python_version: 3.10.17
+        t:
+            "1":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 71
+                - 98
+            "2":
+                - 1
+                - 11
+                - 41
+                - 49
+                - 71
+                - 98
+            "3":
+                - 2
+                - 13
+                - 16
+                - 62
+            "4": 3.10.17
+            "5": 0.25.1
+            "6": 4.57.6
+            "12": 0.25.1
+            "13": linux-x86_64
+alpha:
+    value: 4
+batch_size:
+    value: 128
+device:
+    value: cuda
+dropout:
+    value: 0.1
+epochs:
+    value: 10
+hf_token:
+    value: null
+image_size:
+    value: 224
+limit_train_batches:
+    value: null
+limit_val_batches:
+    value: null
+log_grad_norm_every:
+    value: 10
+lr:
+    value: 0.0002
+mode:
+    value: lora
+model_name:
+    value: WinKawaks/vit-small-patch16-224
+num_classes:
+    value: 100
+num_workers:
+    value: 4
+output_dir:
+    value: q1/outputs
+rank:
+    value: 4
+seed:
+    value: 42
+trainable_params:
+    value: 110592
+val_split:
+    value: 5000
+wandb:
+    value: true
+wandb_entity:
+    value: ikamboj-919-iit-jodhpur
+wandb_project:
+    value: final-ops-ass-5
+wandb_run_name:
+    value: q1-lora-r4-a4-d0.1-full
+weight_decay:
+    value: 0.01
