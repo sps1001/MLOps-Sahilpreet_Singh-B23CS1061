@@ -15,20 +15,21 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <style>
     :root {
-      --accent: #2dd4bf;
-      --accent-dim: rgba(45, 212, 191, 0.14);
-      --accent-glow: rgba(45, 212, 191, 0.35);
-      --gold: #fbbf24;
-      --gold-dim: rgba(251, 191, 36, 0.12);
-      --bg-deep: #060a0d;
-      --bg-elevated: rgba(15, 23, 32, 0.72);
-      --bg-card-hover: rgba(24, 36, 48, 0.95);
-      --text-bright: #f0fdfa;
-      --text-muted: #8ba3b0;
-      --border: rgba(125, 211, 192, 0.15);
-      --border-strong: rgba(45, 212, 191, 0.35);
-      --gradient-name: linear-gradient(115deg, #5eead4 0%, #38bdf8 45%, #fbbf24 100%);
-      --gradient-btn: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #0891b2 100%);
+      --accent: #5eead4;
+      --accent-dim: rgba(94, 234, 212, 0.2);
+      --accent-glow: rgba(94, 234, 212, 0.45);
+      --gold: #fcd34d;
+      --gold-dim: rgba(252, 211, 77, 0.22);
+      --bg-deep: #1a2330;
+      --bg-elevated: #2a3545;
+      --bg-card-hover: #354252;
+      --text-bright: #f8fafc;
+      --text-muted: #c4d0dc;
+      --text-body: #e2e8f0;
+      --border: rgba(255, 255, 255, 0.14);
+      --border-strong: rgba(94, 234, 212, 0.55);
+      --gradient-name: linear-gradient(115deg, #99f6e4 0%, #7dd3fc 50%, #fde047 100%);
+      --gradient-btn: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 55%, #0ea5e9 100%);
       --mono: "JetBrains Mono", ui-monospace, monospace;
     }
 
@@ -46,6 +47,7 @@
       overflow-x: hidden;
       font-weight: 400;
       letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
     }
 
     .bg-animation {
@@ -61,10 +63,10 @@
       position: absolute;
       inset: -40%;
       background:
-        radial-gradient(ellipse 50% 40% at 15% 20%, rgba(45, 212, 191, 0.18) 0%, transparent 55%),
-        radial-gradient(ellipse 45% 35% at 85% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
-        radial-gradient(ellipse 40% 50% at 70% 85%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 40% 60%, rgba(15, 23, 42, 0.9) 0%, transparent 45%);
+        radial-gradient(ellipse 50% 40% at 15% 20%, rgba(45, 212, 191, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 35% at 85% 15%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 50% at 70% 85%, rgba(251, 191, 36, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(26, 35, 48, 0.85) 0%, transparent 50%);
       animation: drift 28s ease-in-out infinite;
     }
 
@@ -73,7 +75,7 @@
       position: absolute;
       inset: 0;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      opacity: 0.5;
+      opacity: 0.25;
       pointer-events: none;
     }
 
@@ -167,13 +169,23 @@
     .name {
       font-size: clamp(2rem, 5vw, 2.85rem);
       font-weight: 800;
+      color: var(--text-bright);
       background: var(--gradient-name);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
       letter-spacing: -0.03em;
       line-height: 1.15;
+      filter: drop-shadow(0 1px 14px rgba(0, 0, 0, 0.35));
+    }
+
+    @supports not (-webkit-background-clip: text) {
+      .name {
+        color: var(--text-bright);
+        background: none;
+        -webkit-text-fill-color: unset;
+      }
     }
 
     .roll {
@@ -209,8 +221,6 @@
       border-radius: 12px;
       border: 1px solid var(--border);
       background: var(--bg-elevated);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
       color: var(--text-bright);
       font-size: 0.95rem;
       font-weight: 600;
@@ -226,10 +236,10 @@
     }
 
     .nav-btn.active {
-      background: linear-gradient(135deg, rgba(20, 184, 166, 0.25) 0%, rgba(8, 145, 178, 0.2) 100%);
+      background: linear-gradient(135deg, rgba(45, 212, 191, 0.35) 0%, rgba(14, 165, 233, 0.28) 100%);
       border-color: var(--accent);
-      color: #ecfdf5;
-      box-shadow: 0 8px 32px rgba(45, 212, 191, 0.15);
+      color: #042f2e;
+      box-shadow: 0 6px 28px rgba(45, 212, 191, 0.25);
     }
 
     .section {
@@ -263,10 +273,9 @@
 
     .card {
       background: var(--bg-elevated);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
       border-radius: 18px;
       border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       position: relative;
@@ -287,7 +296,7 @@
     .card:hover {
       transform: translateY(-6px);
       border-color: var(--border-strong);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.28);
     }
 
     .card:hover::before {
@@ -300,26 +309,25 @@
 
     .card-badge {
       display: inline-block;
-      padding: 5px 12px;
-      border-radius: 8px;
+      padding: 7px 14px;
+      border-radius: 10px;
       font-family: var(--mono);
-      font-size: 0.68rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
       margin-bottom: 14px;
     }
 
     .badge-assignment {
       background: var(--gold-dim);
-      color: #fcd34d;
-      border: 1px solid rgba(251, 191, 36, 0.25);
+      color: #fef3c7;
+      border: 1px solid rgba(252, 211, 77, 0.45);
     }
 
     .badge-worksheet {
       background: var(--accent-dim);
-      color: #5eead4;
-      border: 1px solid rgba(45, 212, 191, 0.25);
+      color: #ccfbf1;
+      border: 1px solid rgba(94, 234, 212, 0.45);
     }
 
     .card-title {
@@ -342,10 +350,11 @@
     }
 
     .card-description {
-      color: #a8bdc8;
-      font-size: 0.94rem;
-      line-height: 1.72;
+      color: var(--text-body);
+      font-size: 1rem;
+      line-height: 1.75;
       margin-bottom: 18px;
+      font-weight: 400;
     }
 
     .card-stats {
@@ -359,15 +368,15 @@
       display: flex;
       align-items: center;
       gap: 7px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
+      font-size: 0.86rem;
+      color: var(--text-body);
       font-family: var(--mono);
     }
 
     .stat svg {
       width: 15px;
       height: 15px;
-      opacity: 0.75;
+      opacity: 0.95;
       color: var(--accent);
       flex-shrink: 0;
     }
@@ -408,14 +417,14 @@
     }
 
     .link-secondary {
-      background: rgba(30, 41, 59, 0.8);
+      background: #3d4a5c;
       color: var(--text-bright);
       border: 1px solid var(--border);
     }
 
     .link-secondary:hover {
       border-color: var(--accent);
-      background: var(--accent-dim);
+      background: #465668;
     }
 
     .link-wandb {
@@ -452,8 +461,8 @@
       text-align: center;
       padding: 36px 0 48px;
       border-top: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.88rem;
+      color: var(--text-body);
+      font-size: 0.92rem;
       line-height: 1.65;
     }
 
@@ -624,7 +633,7 @@
             <span
               className={`card-badge ${isWorksheet ? "badge-worksheet" : "badge-assignment"}`}
             >
-              {isWorksheet ? "Lab worksheet" : "Assignment"}
+              {isWorksheet ? `Worksheet ${item.id}` : `Assignment ${item.id}`}
             </span>
             <h3 className="card-title">{item.title}</h3>
             <p className="card-subtitle">{item.subtitle}</p>
