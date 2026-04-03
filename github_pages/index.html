@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MLOps Portfolio — Sahilpreet Singh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    :root {
+      --accent: #2dd4bf;
+      --accent-dim: rgba(45, 212, 191, 0.14);
+      --accent-glow: rgba(45, 212, 191, 0.35);
+      --gold: #fbbf24;
+      --gold-dim: rgba(251, 191, 36, 0.12);
+      --bg-deep: #060a0d;
+      --bg-elevated: rgba(15, 23, 32, 0.72);
+      --bg-card-hover: rgba(24, 36, 48, 0.95);
+      --text-bright: #f0fdfa;
+      --text-muted: #8ba3b0;
+      --border: rgba(125, 211, 192, 0.15);
+      --border-strong: rgba(45, 212, 191, 0.35);
+      --gradient-name: linear-gradient(115deg, #5eead4 0%, #38bdf8 45%, #fbbf24 100%);
+      --gradient-btn: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #0891b2 100%);
+      --mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Outfit", system-ui, sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-bright);
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    .bg-animation {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      background: var(--bg-deep);
+    }
+
+    .bg-animation::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(ellipse 50% 40% at 15% 20%, rgba(45, 212, 191, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse 45% 35% at 85% 15%, rgba(56, 189, 248, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 40% 50% at 70% 85%, rgba(251, 191, 36, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(15, 23, 42, 0.9) 0%, transparent 45%);
+      animation: drift 28s ease-in-out infinite;
+    }
+
+    .bg-animation::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    @keyframes drift {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      40% {
+        transform: translate(2%, -1%) scale(1.02);
+      }
+
+      70% {
+        transform: translate(-1%, 2%) scale(0.99);
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 9px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-deep);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(45, 212, 191, 0.25);
+      border-radius: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(45, 212, 191, 0.45);
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 22px;
+    }
+
+    .header {
+      padding: 72px 0 36px;
+      text-align: center;
+      position: relative;
+    }
+
+    .header-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: var(--accent-dim);
+      border: 1px solid var(--border);
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      background: var(--gradient-btn);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 22px;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #042f2e;
+      letter-spacing: -0.02em;
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+        0 20px 50px var(--accent-glow);
+      transform: rotate(-3deg);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .avatar:hover {
+      transform: rotate(0deg) scale(1.03);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+        0 24px 60px var(--accent-glow);
+    }
+
+    .name {
+      font-size: clamp(2rem, 5vw, 2.85rem);
+      font-weight: 800;
+      background: var(--gradient-name);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .roll {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .email {
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.25s, filter 0.25s;
+    }
+
+    .email:hover {
+      color: #fde68a;
+      filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.35));
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 36px 0 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 11px 22px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      color: var(--text-bright);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s, transform 0.2s;
+      font-family: inherit;
+    }
+
+    .nav-btn:hover {
+      border-color: var(--border-strong);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .nav-btn.active {
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.25) 0%, rgba(8, 145, 178, 0.2) 100%);
+      border-color: var(--accent);
+      color: #ecfdf5;
+      box-shadow: 0 8px 32px rgba(45, 212, 191, 0.15);
+    }
+
+    .section {
+      padding: 36px 0 72px;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--text-bright);
+      letter-spacing: -0.02em;
+    }
+
+    .section-title span.accent-bar {
+      width: 4px;
+      height: 1.35em;
+      border-radius: 4px;
+      background: var(--gradient-btn);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--bg-elevated);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.4), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-strong);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-header {
+      padding: 22px 22px 0;
+    }
+
+    .card-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .badge-assignment {
+      background: var(--gold-dim);
+      color: #fcd34d;
+      border: 1px solid rgba(251, 191, 36, 0.25);
+    }
+
+    .badge-worksheet {
+      background: var(--accent-dim);
+      color: #5eead4;
+      border: 1px solid rgba(45, 212, 191, 0.25);
+    }
+
+    .card-title {
+      font-size: 1.28rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+      color: var(--text-bright);
+    }
+
+    .card-subtitle {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+
+    .card-body {
+      padding: 14px 22px 22px;
+    }
+
+    .card-description {
+      color: #a8bdc8;
+      font-size: 0.94rem;
+      line-height: 1.72;
+      margin-bottom: 18px;
+    }
+
+    .card-stats {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+
+    .stat svg {
+      width: 15px;
+      height: 15px;
+      opacity: 0.75;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: inherit;
+    }
+
+    .link-btn svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .link-primary {
+      background: var(--gradient-btn);
+      color: #f0fdfa;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .link-primary:hover {
+      box-shadow: 0 6px 24px rgba(45, 212, 191, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .link-secondary {
+      background: rgba(30, 41, 59, 0.8);
+      color: var(--text-bright);
+      border: 1px solid var(--border);
+    }
+
+    .link-secondary:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .link-wandb {
+      background: linear-gradient(135deg, #f59e0b 0%, #ea580c 100%);
+      color: white;
+    }
+
+    .link-wandb:hover {
+      box-shadow: 0 6px 24px rgba(234, 88, 12, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .link-colab {
+      background: linear-gradient(135deg, #f9ab00 0%, #e37400 100%);
+      color: white;
+    }
+
+    .link-colab:hover {
+      box-shadow: 0 6px 24px rgba(249, 171, 0, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .link-hf {
+      background: linear-gradient(135deg, #ff9d00 0%, #ea580c 100%);
+      color: white;
+    }
+
+    .link-hf:hover {
+      box-shadow: 0 6px 24px rgba(255, 109, 0, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 36px 0 48px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+      color: #99f6e4;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 52px 0 28px;
+      }
+
+      .nav-btn {
+        padding: 10px 18px;
+        font-size: 0.88rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-animation" aria-hidden="true"></div>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const REPO = "https://github.com/sps1001/MLOps-Sahilpreet_Singh-B23CS1061";
+    const tree = (branch) => `${REPO}/tree/${branch}`;
+    const blob = (branch, file) => `${REPO}/blob/${branch}/${encodeURIComponent(file)}`;
+
+    const STAT_LABELS = {
+      accuracy: "Accuracy",
+      params: "Parameters",
+      flops: "FLOPs",
+      model: "Model",
+      genres: "Genres",
+    };
+
+    const Icons = {
+      GitHub: () => (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+        </svg>
+      ),
+      Document: () => (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm4 18H6V4h7v5h5v11z" />
+        </svg>
+      ),
+      Chart: () => (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M3 3v18h18M9 17V9m4 8v-5m4 5V6" />
+        </svg>
+      ),
+      Code: () => (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+        </svg>
+      ),
+      HuggingFace: () => (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 1.5a8.5 8.5 0 110 17 8.5 8.5 0 010-17zM8.5 9a1 1 0 100 2 1 1 0 000-2zm7 0a1 1 0 100 2 1 1 0 000-2zm-7.2 5.3a.75.75 0 011.05.15c.55.73 1.3 1.05 2.65 1.05s2.1-.32 2.65-1.05a.75.75 0 011.2.9C15.05 16.7 13.75 17 12 17s-3.05-.3-3.85-1.35a.75.75 0 01.15-1.35z" />
+        </svg>
+      ),
+    };
+
+    const assignments = [
+      {
+        id: 1,
+        title: "ResNet on MNIST & Fashion-MNIST",
+        subtitle: "DLOPs Assignment 1",
+        type: "assignment",
+        description:
+          "ResNet-18 and ResNet-50 experiments on MNIST and Fashion-MNIST with GPU vs CPU comparisons, SGD vs Adam, and result plots — packaged with reproducible notebooks and CSV exports.",
+        links: {
+          github: tree("Assignment-1"),
+          report: blob("Assignment-1", "B23CS1061_Sahilpreet_Singh_Ass1.pdf"),
+        },
+      },
+      {
+        id: 2,
+        title: "Data contracts & YAML (ODCS-style)",
+        subtitle: "MLOps Assignment 2",
+        type: "assignment",
+        description:
+          "Data contract design and YAML validation for multiple domains, focusing on schema clarity, governance hooks, and automated quality checks.",
+        links: {
+          github: tree("Assignment-2"),
+          report: blob("Assignment-2", "report.pdf"),
+        },
+      },
+      {
+        id: 3,
+        title: "Fine-tuning & containerised workflow",
+        subtitle: "MLOps Assignment 3",
+        type: "assignment",
+        description:
+          "Fine-tuning pipeline with Hugging Face–style training scripts, Docker, and evaluation utilities — training and scoring kept separate for a deployable workflow.",
+        links: {
+          github: tree("Assignment-3"),
+        },
+      },
+      {
+        id: 4,
+        title: "Transformer tuning with Ray Tune",
+        subtitle: "MLOps Assignment 4",
+        type: "assignment",
+        description:
+          "Hyperparameter search and scheduling for a translation-style Transformer setup using Ray Tune / Optuna patterns, with reporting in the course PDF.",
+        stats: { accuracy: "90.38 BLEU", model: "Transformer" },
+        links: {
+          github: tree("Assignment-4"),
+          report: blob("Assignment-4", "b23cs1061_ass_4_report.pdf"),
+        },
+      },
+      {
+        id: 5,
+        title: "ViT on CIFAR-100 — LoRA & Optuna",
+        subtitle: "MLOps Assignment 5",
+        type: "assignment",
+        description:
+          "Vision Transformer experiments on CIFAR-100 with LoRA configuration search driven by Optuna, evaluation scripts, and Docker support for repeatable runs.",
+        links: {
+          github: tree("Assignment-5"),
+          report: blob("Assignment-5", "B23CS1061_SahilpreetSingh_Ass5.pdf"),
+        },
+      },
+    ];
+
+    const worksheets = [
+      {
+        id: 1,
+        title: "CIFAR-10 CNN — metrics & WandB",
+        subtitle: "Lab 2 worksheet",
+        type: "worksheet",
+        description:
+          "Custom CNN on CIFAR-10 with parameter and FLOPs accounting, gradient and weight-update visualisation, and experiment logging with Weights & Biases.",
+        stats: {
+          accuracy: "~78% test",
+          params: "1.07M",
+          flops: "6.65M MACs",
+        },
+        links: {
+          github: tree("Sahil_B23CS1061_lab2_worksheet"),
+          report: blob("Sahil_B23CS1061_lab2_worksheet", "Report_Lab2_Worksheet.pdf"),
+        },
+      },
+    ];
+
+    function StatIcon({ k }) {
+      return k === "model" || k === "genres" ? <Icons.Code /> : <Icons.Chart />;
+    }
+
+    function Card({ item }) {
+      const isWorksheet = item.type === "worksheet";
+
+      return (
+        <article className="card">
+          <div className="card-header">
+            <span
+              className={`card-badge ${isWorksheet ? "badge-worksheet" : "badge-assignment"}`}
+            >
+              {isWorksheet ? "Lab worksheet" : "Assignment"}
+            </span>
+            <h3 className="card-title">{item.title}</h3>
+            <p className="card-subtitle">{item.subtitle}</p>
+          </div>
+          <div className="card-body">
+            <p className="card-description">{item.description}</p>
+
+            {item.stats && (
+              <div className="card-stats">
+                {Object.entries(item.stats).map(([key, value]) => (
+                  <div className="stat" key={key}>
+                    <StatIcon k={key} />
+                    <span>
+                      {STAT_LABELS[key] || key}: {value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="card-links">
+              <a
+                href={item.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-btn link-secondary"
+              >
+                <Icons.GitHub />
+                GitHub
+              </a>
+              {item.links.report && (
+                <a
+                  href={item.links.report}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-btn link-primary"
+                >
+                  <Icons.Document />
+                  Report
+                </a>
+              )}
+              {item.links.wandb && (
+                <a
+                  href={item.links.wandb}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-btn link-wandb"
+                >
+                  <Icons.Chart />
+                  WandB
+                </a>
+              )}
+              {item.links.colab && (
+                <a
+                  href={item.links.colab}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-btn link-colab"
+                >
+                  <Icons.Code />
+                  Colab
+                </a>
+              )}
+              {item.links.huggingface && (
+                <a
+                  href={item.links.huggingface}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-btn link-hf"
+                >
+                  <Icons.HuggingFace />
+                  HF Hub
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      );
+    }
+
+    function App() {
+      const [activeTab, setActiveTab] = useState("all");
+
+      const getFilteredItems = () => {
+        if (activeTab === "assignments") return assignments;
+        if (activeTab === "worksheets") return worksheets;
+        return [...assignments, ...worksheets];
+      };
+
+      return (
+        <div>
+          <div className="container">
+            <header className="header">
+              <p className="header-tag">Portfolio</p>
+              <div className="avatar" aria-hidden>
+                SS
+              </div>
+              <h1 className="name">Sahilpreet Singh</h1>
+              <p className="roll">B23CS1061 · IIT Jodhpur</p>
+              <a href="mailto:b23cs1061@iitj.ac.in" className="email">
+                b23cs1061@iitj.ac.in
+              </a>
+            </header>
+
+            <nav className="nav" aria-label="Filter work">
+              <button
+                type="button"
+                className={`nav-btn ${activeTab === "all" ? "active" : ""}`}
+                onClick={() => setActiveTab("all")}
+              >
+                All work
+              </button>
+              <button
+                type="button"
+                className={`nav-btn ${activeTab === "assignments" ? "active" : ""}`}
+                onClick={() => setActiveTab("assignments")}
+              >
+                Assignments
+              </button>
+              <button
+                type="button"
+                className={`nav-btn ${activeTab === "worksheets" ? "active" : ""}`}
+                onClick={() => setActiveTab("worksheets")}
+              >
+                Lab worksheets
+              </button>
+            </nav>
+
+            <section className="section">
+              <h2 className="section-title">
+                <span className="accent-bar" aria-hidden />
+                {activeTab === "all" && "All work"}
+                {activeTab === "assignments" && "Assignments"}
+                {activeTab === "worksheets" && "Lab worksheets"}
+              </h2>
+
+              <div className="cards-grid">
+                {getFilteredItems().map((item) => (
+                  <Card key={`${item.type}-${item.id}`} item={item} />
+                ))}
+              </div>
+            </section>
+
+            <footer className="footer">
+              <p>MLOps · IIT Jodhpur · 2026</p>
+              <p style={{ marginTop: "10px" }}>
+                <a href={REPO} target="_blank" rel="noopener noreferrer">
+                  View repository on GitHub
+                </a>
+              </p>
+            </footer>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+
+</html>
