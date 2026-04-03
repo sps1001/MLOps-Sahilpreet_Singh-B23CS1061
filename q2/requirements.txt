@@ -1,0 +1,7 @@
+torch
+torchvision
+wandb>=0.17.0
+numpy
+tqdm
+matplotlib
+adversarial-robustness-toolbox>=1.18.0
