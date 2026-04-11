@@ -24,11 +24,15 @@
       --lime: #22c55e;
       --bg-deep: #08111d;
       --bg-mid: #101d2d;
+      --bg-stage: rgba(4, 12, 22, 0.78);
+      --bg-stage-strong: rgba(2, 9, 16, 0.86);
       --bg-elevated: rgba(234, 244, 250, 0.78);
       --bg-panel: rgba(209, 226, 238, 0.8);
       --text-bright: #0f172a;
       --text-muted: #52657f;
       --text-body: #2f4359;
+      --text-on-dark: #e7f1fb;
+      --text-on-dark-muted: #9ab3cb;
       --border: rgba(96, 165, 250, 0.2);
       --border-strong: rgba(14, 165, 233, 0.36);
       --gradient-name: linear-gradient(115deg, #0f172a 0%, #0369a1 35%, #0ea5e9 70%, #14b8a6 100%);
@@ -51,7 +55,7 @@
         radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 20%),
         radial-gradient(circle at top right, rgba(45, 212, 191, 0.1), transparent 18%),
         linear-gradient(180deg, #08111d 0%, #0b1624 44%, #0e1c2b 100%);
-      color: var(--text-bright);
+      color: var(--text-on-dark);
       min-height: 100vh;
       overflow-x: hidden;
       font-weight: 400;
@@ -458,6 +462,21 @@
       flex-wrap: wrap;
     }
 
+    .work-shell {
+      margin-top: 12px;
+      margin-bottom: 20px;
+      padding: 22px;
+      border-radius: 28px;
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      background:
+        linear-gradient(165deg, rgba(6, 17, 30, 0.88) 0%, rgba(4, 12, 24, 0.82) 50%, rgba(3, 9, 18, 0.88) 100%),
+        var(--bg-stage);
+      box-shadow:
+        0 26px 60px rgba(2, 8, 16, 0.5),
+        inset 0 1px 0 rgba(148, 215, 255, 0.18);
+      backdrop-filter: blur(10px);
+    }
+
     .nav-copy {
       max-width: 520px;
     }
@@ -477,10 +496,11 @@
       line-height: 1.1;
       letter-spacing: -0.03em;
       margin-bottom: 10px;
+      color: var(--text-on-dark);
     }
 
     .nav-description {
-      color: var(--text-muted);
+      color: var(--text-on-dark-muted);
       line-height: 1.75;
       max-width: 48ch;
     }
@@ -495,9 +515,9 @@
     .nav-btn {
       padding: 12px 20px;
       border-radius: 14px;
-      border: 1px solid var(--border);
-      background: rgba(226, 237, 245, 0.72);
-      color: var(--text-bright);
+      border: 1px solid rgba(148, 215, 255, 0.22);
+      background: var(--bg-stage-strong);
+      color: var(--text-on-dark);
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
@@ -506,16 +526,16 @@
     }
 
     .nav-btn:hover {
-      border-color: var(--border-strong);
-      background: rgba(236, 245, 251, 0.88);
+      border-color: rgba(56, 189, 248, 0.52);
+      background: rgba(8, 21, 36, 0.94);
       transform: translateY(-2px);
     }
 
     .nav-btn.active {
-      background: linear-gradient(135deg, rgba(14, 165, 233, 0.18) 0%, rgba(45, 212, 191, 0.16) 100%);
-      border-color: rgba(14, 165, 233, 0.28);
-      color: #0f172a;
-      box-shadow: 0 10px 28px rgba(125, 211, 252, 0.22);
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.3) 0%, rgba(45, 212, 191, 0.28) 100%);
+      border-color: rgba(56, 189, 248, 0.68);
+      color: #f3fbff;
+      box-shadow: 0 10px 28px rgba(14, 165, 233, 0.26);
     }
 
     .section {
@@ -530,7 +550,7 @@
       display: flex;
       align-items: center;
       gap: 14px;
-      color: var(--text-bright);
+      color: var(--text-on-dark);
       letter-spacing: -0.02em;
     }
 
@@ -774,8 +794,8 @@
     .footer {
       text-align: center;
       padding: 36px 0 48px;
-      border-top: 1px solid var(--border);
-      color: var(--text-body);
+      border-top: 1px solid rgba(148, 215, 255, 0.18);
+      color: var(--text-on-dark-muted);
       font-size: 0.92rem;
       line-height: 1.65;
     }
@@ -788,7 +808,7 @@
 
     .footer a:hover {
       text-decoration: underline;
-      color: #0369a1;
+      color: #7dd3fc;
     }
 
     @media (max-width: 768px) {
@@ -826,6 +846,11 @@
     @media (max-width: 560px) {
       .container {
         padding: 0 16px;
+      }
+
+      .work-shell {
+        padding: 16px;
+        border-radius: 22px;
       }
 
       .hero-shell {
@@ -1188,51 +1213,53 @@
               </div>
             </header>
 
-            <nav className="nav" aria-label="Filter work">
-              <div className="nav-copy">
-                <p className="eyebrow">{activeMeta.eyebrow}</p>
-                <h2 className="nav-title">{activeMeta.title}</h2>
-                <p className="nav-description">{activeMeta.description}</p>
-              </div>
-              <div className="nav-controls">
-                <button
-                  type="button"
-                  className={`nav-btn ${activeTab === "all" ? "active" : ""}`}
-                  onClick={() => setActiveTab("all")}
-                >
-                  All work
-                </button>
-                <button
-                  type="button"
-                  className={`nav-btn ${activeTab === "assignments" ? "active" : ""}`}
-                  onClick={() => setActiveTab("assignments")}
-                >
-                  Assignments
-                </button>
-                <button
-                  type="button"
-                  className={`nav-btn ${activeTab === "worksheets" ? "active" : ""}`}
-                  onClick={() => setActiveTab("worksheets")}
-                >
-                  Lab worksheets
-                </button>
-              </div>
-            </nav>
+            <main className="work-shell" aria-label="Portfolio work sections">
+              <nav className="nav" aria-label="Filter work">
+                <div className="nav-copy">
+                  <p className="eyebrow">{activeMeta.eyebrow}</p>
+                  <h2 className="nav-title">{activeMeta.title}</h2>
+                  <p className="nav-description">{activeMeta.description}</p>
+                </div>
+                <div className="nav-controls">
+                  <button
+                    type="button"
+                    className={`nav-btn ${activeTab === "all" ? "active" : ""}`}
+                    onClick={() => setActiveTab("all")}
+                  >
+                    All work
+                  </button>
+                  <button
+                    type="button"
+                    className={`nav-btn ${activeTab === "assignments" ? "active" : ""}`}
+                    onClick={() => setActiveTab("assignments")}
+                  >
+                    Assignments
+                  </button>
+                  <button
+                    type="button"
+                    className={`nav-btn ${activeTab === "worksheets" ? "active" : ""}`}
+                    onClick={() => setActiveTab("worksheets")}
+                  >
+                    Lab worksheets
+                  </button>
+                </div>
+              </nav>
 
-            <section className="section">
-              <h2 className="section-title">
-                <span className="accent-bar" aria-hidden />
-                {activeTab === "all" && "All work"}
-                {activeTab === "assignments" && "Assignments"}
-                {activeTab === "worksheets" && "Lab worksheets"}
-              </h2>
+              <section className="section">
+                <h2 className="section-title">
+                  <span className="accent-bar" aria-hidden />
+                  {activeTab === "all" && "All work"}
+                  {activeTab === "assignments" && "Assignments"}
+                  {activeTab === "worksheets" && "Lab worksheets"}
+                </h2>
 
-              <div className="cards-grid">
-                {getFilteredItems().map((item) => (
-                  <Card key={`${item.type}-${item.id}`} item={item} />
-                ))}
-              </div>
-            </section>
+                <div className="cards-grid">
+                  {getFilteredItems().map((item) => (
+                    <Card key={`${item.type}-${item.id}`} item={item} />
+                  ))}
+                </div>
+              </section>
+            </main>
 
             <footer className="footer">
               <p>MLOps · IIT Jodhpur · 2026</p>
